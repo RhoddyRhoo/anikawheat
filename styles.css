@@ -1,0 +1,168 @@
+/* ================= Universal Styles ====================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;          /* made with CSS and pain (×﹏×) */
+  color: #ffcbcb;
+  background-color: #00223D;
+}
+
+ul {
+  list-style: none;       /* to remove bullet point at bottom of first page */
+}
+
+body {
+  margin: 0;
+  display: flex;
+  min-height: 100vh;
+  font-family: sans-serif; 
+}
+
+/* ============================== Fixed Header (Left Sidebar) ================= */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100vh;
+  background-color: #001c33;
+  border-right: 1px solid #000000;
+  padding: 2rem 1rem;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);      /* subtle shadow for visual seperatin */
+    
+    display: flex;
+    flex-direction: column;      
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+header h2 {
+  font-size: 1rem;
+}
+
+header h4 {
+  padding-top: 50px;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+/* ===================== Scrollable Content Area =========================== */
+main {
+  margin-left: 250px;   /* so main content doesn't overlap with sidebar */
+  padding: 2rem;
+  width: calc(100% - 250px);
+  overflow-x: hidden;
+}
+
+/* ================================ Links ============================== */
+a {
+  display: inline-block;
+  margin: 0.5rem 1rem 1rem 0;
+  text-decoration: none;    /* no underline because that's ugly */
+  color: #0066cc;
+}
+
+a:hover {
+  text-decoration: underline;   /* underline when hovering so users know it's a link */
+}
+
+/* ======================== Articles =============================== */
+
+article {
+  margin-bottom: 3rem;
+}
+/*                               just some spacing between articles and paragraphs */
+article p {
+  margin-bottom: 1rem;
+}
+
+/* ======================================= Media ================================ */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;         /* removes white space */
+  margin-top: 1rem;
+}
+
+/* ==================== exempt video pitch from above rule =============================== */ 
+iframe {
+    display: block;
+    margin-top: 1rem;
+    max-width: 100%;
+}
+
+/* ============================== Porjects Section ======================== */
+.project {
+  background-color: #001c33;
+  border: 1px solid #000000;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  margin-right: 20rem;        /* gives room on the right for symmetry */
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+} 
+
+/* ========================== Footer ============================ */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ================================ Media Queries ============================== */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+  
+    header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    padding: 1rem;
+    background-color: #001c33;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 1px solid #ccc;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+  
+  header h2 {
+    display: none;
+  }
+
+  main {
+    margin: 0 auto;
+    width: 100%;
+    padding: 2rem 1rem;
+    padding-top: 12rem; 
+  }
+  
+  .project {
+    margin-right: 0; 
+  }
+}
+
